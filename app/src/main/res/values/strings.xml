@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">OJASS 2022</string>
+    <string name="navigation_drawer_open">navigaion drawer open</string>
+    <string name="navigation_drawer_close">navigation drawer close</string>
 </resources>
