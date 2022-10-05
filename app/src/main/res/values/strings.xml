@@ -2,4 +2,6 @@
     <string name="app_name">OJASS 2022</string>
     <string name="navigation_drawer_open">navigaion drawer open</string>
     <string name="navigation_drawer_close">navigation drawer close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
