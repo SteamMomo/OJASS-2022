@@ -34,26 +34,34 @@ public class MainActivity extends AppCompatActivity {
      */
     private void frameLayoutController() {
         navigationView.setNavigationItemSelectedListener(item -> {
-            if(item.getItemId() == R.id.home)
+            if(item.getItemId() == R.id.home){
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame, new HomeFragment())
                         .commit();
-            if(item.getItemId() == R.id.events)
+                toolbar.setTitle("OJASS'22");
+            }
+            if(item.getItemId() == R.id.events) {
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame, new EventsFragment())
                         .commit();
-            if(item.getItemId() == R.id.developers)
+                toolbar.setTitle("Events");
+            }
+            if(item.getItemId() == R.id.developers) {
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame, new DevelopersFragment())
                         .commit();
-            if(item.getItemId() == R.id.about_us)
+                toolbar.setTitle("Developers");
+            }
+            if(item.getItemId() == R.id.about_us) {
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame, new AboutUsFragment())
                         .commit();
+                toolbar.setTitle("About Us");
+            }
             if(drawerLayout.isDrawerOpen(GravityCompat.START))
                 drawerLayout.closeDrawer(GravityCompat.START);
             return false;
