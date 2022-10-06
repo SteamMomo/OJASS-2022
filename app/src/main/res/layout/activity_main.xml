@@ -28,8 +28,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:foreground="?attr/selectableItemBackground"
-        android:clickable="true"
+        android:clickable="false"
         app:menu="@menu/nav_menu"
-        android:focusable="true" />
+        android:focusable="false" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
