@@ -17,9 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white" >
-
-
-
         </androidx.appcompat.widget.Toolbar>
         <!-- For fragments -->
         <FrameLayout
