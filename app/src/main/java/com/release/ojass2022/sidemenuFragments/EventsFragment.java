@@ -46,7 +46,8 @@ public class EventsFragment extends Fragment {
         ArrayList<PostItemModel> events = viewModel.getEvents();
         EventItemAdapter eventItemAdapter = new EventItemAdapter(events, requireContext());
         RecyclerView recyclerView = view.findViewById(R.id.eventRecyclerview);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext()
+                , LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(eventItemAdapter);
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.ramotion.foldingcell.FoldingCell xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/foldingCell"
     android:layout_width="match_parent"
@@ -12,7 +13,6 @@
         android:id="@+id/cell_content_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_dark"
         android:visibility="gone">
 
         <LinearLayout
@@ -33,22 +33,22 @@
                 android:layout_gravity="center"
                 android:text="Event Name"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textSize="30dp" />
 
             <TextView
                 android:id="@+id/eventDescription"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Event description blah blah blah"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:minHeight="60dp"
+                android:text="@string/lorem_ipsum"
+                android:textColor="@color/black" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subEventRecyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/subEventRecyclerview"
-                tools:itemCount="5"/>
+                tools:itemCount="5" />
 
         </LinearLayout>
 
@@ -59,22 +59,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/eventImage1"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:scaleType="centerCrop"
-            android:background="@drawable/temp_image" />
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp">
 
-        <TextView
-            android:id="@+id/eventTitle1"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:gravity="center"
-            android:text="Event Name"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/eventImage1"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="#DDDDDD"
+                android:scaleType="centerCrop" />
 
+            <TextView
+                android:id="@+id/eventTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:gravity="center"
+                android:text="Event Name"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
 
     </FrameLayout>
 
