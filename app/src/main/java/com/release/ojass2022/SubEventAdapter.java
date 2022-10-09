@@ -1,6 +1,7 @@
 package com.release.ojass2022;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public class SubEventAdapter extends RecyclerView.Adapter<SubEventAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull SubEventAdapter.MyViewHolder holder, int position) {
         holder.subEevntName.setOnClickListener(v ->
-                Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show());
+                context.startActivity(new Intent(context,EventDetailsActivity.class)));
         holder.subEevntName.setText(subEvents.get(position));
     }
 
