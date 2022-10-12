@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.114" />
+        <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/cardview_background.xml" value="0.1" />
+        <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/comment.xml" value="0.1" />
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/description.xml" value="0.114" />
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/developers.xml" value="0.114" />
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/events.xml" value="0.114" />
@@ -11,6 +13,10 @@
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.114" />
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/ic_launcher_background.xml" value="0.114" />
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/menu.xml" value="0.114" />
+        <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/options.xml" value="0.1" />
+        <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/prize.xml" value="0.1" />
+        <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/rules.xml" value="0.1" />
+        <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/drawable/tablayout_background.xml" value="0.1" />
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/layout/activity_splash_screen.xml" value="0.15989583333333332" />
         <entry key="..\:/Hacktoberfest22/Android/OJASS-2022/app/src/main/res/layout/fragment_about_us.xml" value="0.17552083333333332" />
