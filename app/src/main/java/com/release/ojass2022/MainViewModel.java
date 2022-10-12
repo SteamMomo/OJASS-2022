@@ -8,6 +8,7 @@ import java.util.List;
 
 public class MainViewModel extends ViewModel {
     private ArrayList <PostItemModel> posts;
+    private ArrayList <PostItemModel> events;
 
     public ArrayList<PostItemModel> getPosts() {
         if (posts == null) {
@@ -22,6 +23,25 @@ public class MainViewModel extends ViewModel {
         temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
         temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
         posts = temp;
+    }
+
+    public ArrayList<PostItemModel> getEvents() {
+        if (events == null) {
+            events = new ArrayList<>();
+            loadEvents();
+        }
+        return events;
+    }
+
+    private void loadEvents() {
+        ArrayList<PostItemModel> temp = new ArrayList<>();
+        temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
+        events = temp;
     }
 
 }

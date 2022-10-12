@@ -14,8 +14,20 @@
         android:theme="@style/Theme.OJASS2022"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".SplashScreen"
             android:exported="true" >
+=======
+            android:name=".EventDetailsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+>>>>>>> 612ee0f830299da9369e8ba4341f96913ecc7447
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

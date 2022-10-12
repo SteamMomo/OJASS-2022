@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.widget.FrameLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.release.ojass2022.sidemenuFragments.AboutUsFragment;
@@ -19,11 +20,15 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
+    FrameLayout frameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame, new HomeFragment())
+                .commit();
         initialisations();
         configureToolbar();
         frameLayoutController();
@@ -39,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         .beginTransaction()
                         .replace(R.id.frame, new HomeFragment())
                         .commit();
-                toolbar.setTitle("OJASS'22");
+                toolbar.setTitle("Home");
             }
             if(item.getItemId() == R.id.events) {
                 getSupportFragmentManager()
@@ -73,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void configureToolbar() {
 
+        toolbar.setTitle("Home");
         setSupportActionBar(toolbar);
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
@@ -87,5 +93,20 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigation);
         drawerLayout = findViewById(R.id.main_drawer_layout);
         toolbar = findViewById(R.id.toolbar);
+        frameLayout = findViewById(R.id.frame);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(toolbar.getTitle()!="Home"){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame, new HomeFragment())
+                    .commit();
+            toolbar.setTitle("Home");
+        }
+        else
+            super.onBackPressed();
+
     }
 }
