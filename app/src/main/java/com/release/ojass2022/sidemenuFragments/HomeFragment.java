@@ -11,15 +11,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.release.ojass2022.MainViewModel;
 import com.release.ojass2022.PostItemAdapter;
 import com.release.ojass2022.PostItemModel;
 import com.release.ojass2022.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeFragment extends Fragment {
+    private GoogleSignInOptions gso;
+    private GoogleSignInClient mGoogleSignInClient;
+
     public HomeFragment() {
     }
     public static HomeFragment newInstance(String param1, String param2) {
@@ -36,9 +41,17 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
+        initializations();
         configureRecyclerView();
 
         return view;
+    }
+
+    private void initializations() {
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(requireContext(), gso);
     }
 
     private void configureRecyclerView() {
