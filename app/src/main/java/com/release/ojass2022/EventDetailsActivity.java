@@ -2,6 +2,7 @@ package com.release.ojass2022;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
@@ -17,6 +18,7 @@ public class EventDetailsActivity extends AppCompatActivity {
 
     private TabLayout tabLayoutDetailsOption;
     private ViewPager2 viewPager2DetailsContainer;
+    private Toolbar toolbar;
 
     private int [] iconList ={R.drawable.about,R.drawable.details,R.drawable.rules,R.drawable.event_head,R.drawable.prize};
 
@@ -25,6 +27,11 @@ public class EventDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
         initialisations();
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationOnClickListener(view -> {
+            onBackPressed();
+        });
 
         ViewPagerAdapterEventDetails adapterEventDetails=new ViewPagerAdapterEventDetails(getSupportFragmentManager(),getLifecycle());
         viewPager2DetailsContainer.setAdapter(adapterEventDetails);
@@ -52,6 +59,7 @@ public class EventDetailsActivity extends AppCompatActivity {
     }
 
     private void initialisations(){
+        toolbar=findViewById(R.id.tb);
         tabLayoutDetailsOption=findViewById(R.id.tlDetailsOptions);
         viewPager2DetailsContainer=findViewById(R.id.vpDetailsContainer);
     }
