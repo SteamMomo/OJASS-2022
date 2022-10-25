@@ -3,6 +3,7 @@ package com.release.ojass2022;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +16,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 import java.util.List;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.MyViewHolder> {
     List<PostItemModel> mFiles;
     Context mContext;
+    Retrofit.Builder builder = new Retrofit.Builder()
+            .baseUrl("https://ojass-backend.herokuapp.com/")
+            .addConverterFactory(GsonConverterFactory.create());
+    Retrofit retrofit = builder.build();
+    UserClient userClient = retrofit.create(UserClient.class);
 
     public PostItemAdapter(List<PostItemModel> mFiles, Context mContext) {
         this.mFiles = mFiles;
@@ -64,7 +75,26 @@ public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.MyView
             mContext.startActivity(new Intent(mContext, LoginActivity.class));
         } else {
             Toast.makeText(mContext, "User signed in", Toast.LENGTH_SHORT).show();
+            postRequest(account);
         }
+    }
+
+    private void postRequest(GoogleSignInAccount acc) {
+        String token = acc.getIdToken();
+        User user = new User(token);
+        Call<ResponseBody> call = userClient.sendToken(user);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                Toast.makeText(mContext, "Token sent" + response, Toast.LENGTH_SHORT).show();
+                Log.wtf("Token Response", String.valueOf(response));
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+                Toast.makeText(mContext, "Error :(", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -77,7 +107,7 @@ public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.MyView
         notifyDataSetChanged();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView postTitle, postTimestamp, postDescription, likeCount, commentCount;
         ImageView postProfileImage, postImage, likeBtn, commentBtn;
 

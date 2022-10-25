@@ -20,8 +20,12 @@ public class MainViewModel extends ViewModel {
 
     private void loadPosts() {
         ArrayList<PostItemModel> temp = new ArrayList<>();
-        temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
-        temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "2 days ago", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "2 days ago", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "2 days ago", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "2 days ago", "qwerty", "This is a sample description.", 10, 20));
+        temp.add(new PostItemModel("OJASS", "2 days ago", "qwerty", "This is a sample description.", 10, 20));
+
         posts = temp;
     }
 
