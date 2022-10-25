@@ -4,12 +4,15 @@
     android:layout_width="match_parent"
     android:id="@+id/homeFragment"
     android:layout_height="match_parent"
+    android:background="@drawable/ojasslogo"
     tools:context=".sidemenuFragments.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="7dp"
         android:id="@+id/postRecyclerView"/>
 
 </FrameLayout>

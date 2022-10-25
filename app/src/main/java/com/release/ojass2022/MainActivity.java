@@ -1,16 +1,22 @@
 package com.release.ojass2022;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
+import android.os.Bundle;
+import android.widget.FrameLayout;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.os.Bundle;
-import android.widget.FrameLayout;
-
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
-import com.release.ojass2022.sidemenuFragments.AboutUsFragment;
 import com.release.ojass2022.sidemenuFragments.DevelopersFragment;
 import com.release.ojass2022.sidemenuFragments.EventsFragment;
 import com.release.ojass2022.sidemenuFragments.HomeFragment;
@@ -21,11 +27,16 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     FrameLayout frameLayout;
+    GoogleSignInOptions gso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);getSupportFragmentManager()
+        setContentView(R.layout.activity_main);
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.frame, new HomeFragment())
                 .commit();
@@ -39,38 +50,47 @@ public class MainActivity extends AppCompatActivity {
      */
     private void frameLayoutController() {
         navigationView.setNavigationItemSelectedListener(item -> {
-            if(item.getItemId() == R.id.home){
+            if (item.getItemId() == R.id.home) {
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame, new HomeFragment())
                         .commit();
                 toolbar.setTitle("Home");
             }
-            if(item.getItemId() == R.id.events) {
+            if (item.getItemId() == R.id.events) {
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame, new EventsFragment())
                         .commit();
                 toolbar.setTitle("Events");
             }
-            if(item.getItemId() == R.id.developers) {
+            if (item.getItemId() == R.id.developers) {
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame, new DevelopersFragment())
                         .commit();
                 toolbar.setTitle("Developers");
             }
-            if(item.getItemId() == R.id.about_us) {
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frame, new AboutUsFragment())
-                        .commit();
-                toolbar.setTitle("About Us");
+            if (item.getItemId() == R.id.sign_out) {
+                signOut();
             }
-            if(drawerLayout.isDrawerOpen(GravityCompat.START))
+            if (drawerLayout.isDrawerOpen(GravityCompat.START))
                 drawerLayout.closeDrawer(GravityCompat.START);
             return false;
         });
+    }
+
+    private void signOut() {
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if (account != null) {
+            GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+            mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(MainActivity.this, "User signed out", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     /**
@@ -79,17 +99,14 @@ public class MainActivity extends AppCompatActivity {
     private void configureToolbar() {
 
         toolbar.setTitle("Home");
-        setSupportActionBar(toolbar);
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        toolbar.setNavigationIcon(R.drawable.menu_light);
+        toolbar.setNavigationOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
     }
 
     /**
      * Initialization block
      */
-    void initialisations(){
+    void initialisations() {
         navigationView = findViewById(R.id.navigation);
         drawerLayout = findViewById(R.id.main_drawer_layout);
         toolbar = findViewById(R.id.toolbar);
@@ -98,14 +115,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(toolbar.getTitle()!="Home"){
+        if (toolbar.getTitle() != "Home") {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.frame, new HomeFragment())
                     .commit();
             toolbar.setTitle("Home");
-        }
-        else
+        } else
             super.onBackPressed();
 
     }

@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:checkableBehavior="single">
 
         <item android:id="@+id/home"
             android:title="Home"
-            android:icon="@drawable/home" />
+            android:icon="@drawable/home"
+            android:checkable="true"
+            app:showAsAction="ifRoom" />
         <item android:id="@+id/events"
             android:title="Events"
-            android:icon="@drawable/events" />
+            android:icon="@drawable/events"
+            android:checkable="true"
+            app:showAsAction="ifRoom" />
         <item android:id="@+id/developers"
             android:title="Developers"
-            android:icon="@drawable/developers" />
+            android:icon="@drawable/developers"
+            android:checkable="true"
+            app:showAsAction="ifRoom" />
         <item android:id="@+id/about_us"
             android:title="About Us"
-            android:icon="@drawable/description" />
+            android:icon="@drawable/description"
+            android:checkable="true"
+            app:showAsAction="ifRoom" />
+        <item android:id="@+id/sign_out"
+            android:title="Logout"
+            android:icon="@drawable/logout"
+            android:checkable="true"
+            app:showAsAction="ifRoom" />
     </group>
 </menu>
