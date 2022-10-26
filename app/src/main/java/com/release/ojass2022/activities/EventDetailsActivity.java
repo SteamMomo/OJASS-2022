@@ -1,4 +1,4 @@
-package com.release.ojass2022;
+package com.release.ojass2022.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.release.ojass2022.R;
+import com.release.ojass2022.ViewPagerAdapterEventDetails;
 
 public class EventDetailsActivity extends AppCompatActivity {
 

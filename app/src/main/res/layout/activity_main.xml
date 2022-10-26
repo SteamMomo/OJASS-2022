@@ -7,7 +7,7 @@
     android:id="@+id/main_drawer_layout"
     tools:openDrawer="start"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
