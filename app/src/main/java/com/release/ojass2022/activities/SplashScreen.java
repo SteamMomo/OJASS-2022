@@ -1,15 +1,13 @@
-package com.release.ojass2022;
+package com.release.ojass2022.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
-import android.widget.MediaController;
-import android.widget.VideoView;
+
+import com.release.ojass2022.R;
 
 public class SplashScreen extends AppCompatActivity {
 

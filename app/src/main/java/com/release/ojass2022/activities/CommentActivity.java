@@ -1,8 +1,10 @@
-package com.release.ojass2022;
+package com.release.ojass2022.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.release.ojass2022.R;
 
 public class CommentActivity extends AppCompatActivity {
 

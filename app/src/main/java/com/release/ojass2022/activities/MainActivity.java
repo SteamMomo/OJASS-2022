@@ -1,4 +1,4 @@
-package com.release.ojass2022;
+package com.release.ojass2022.activities;
 
 import android.os.Bundle;
 import android.widget.FrameLayout;
@@ -17,6 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.release.ojass2022.R;
 import com.release.ojass2022.sidemenuFragments.DevelopersFragment;
 import com.release.ojass2022.sidemenuFragments.EventsFragment;
 import com.release.ojass2022.sidemenuFragments.HomeFragment;
