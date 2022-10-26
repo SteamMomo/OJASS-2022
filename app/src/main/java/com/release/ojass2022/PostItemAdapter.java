@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.release.ojass2022.activities.CommentActivity;
 import com.release.ojass2022.activities.LoginActivity;
 
 import java.util.List;
@@ -67,6 +68,19 @@ public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.MyView
 
         //like and post button controls
         holder.likeBtn.setOnClickListener(v -> likeBtnControls());
+        holder.commentBtn.setOnClickListener(v -> commentBtnControls());
+    }
+
+    private void commentBtnControls() {
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(mContext);
+        if (account == null) {
+            Toast.makeText(mContext, "User not signed in", Toast.LENGTH_SHORT).show();
+            mContext.startActivity(new Intent(mContext, CommentActivity.class));
+        } else {
+            Toast.makeText(mContext, "User signed in", Toast.LENGTH_SHORT).show();
+            mContext.startActivity(new Intent(mContext, CommentActivity.class));
+            postRequest(account);
+        }
     }
 
     private void likeBtnControls() {
