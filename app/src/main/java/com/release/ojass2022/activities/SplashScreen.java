@@ -11,7 +11,7 @@ import com.release.ojass2022.R;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private int splashtimeout = 2000;
+    private int splashtimeout = 2500;
 
 
     @Override
