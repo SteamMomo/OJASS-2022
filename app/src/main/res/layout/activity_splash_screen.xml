@@ -17,7 +17,7 @@
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/globegrid" />
@@ -26,38 +26,100 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.4"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
             android:weightSum="5">
 
+            <ImageView
+                android:id="@+id/ojass_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:src="@drawable/ojass_three" />
+
+
+            <!-- due to size I used complete ojass in single pic
+            -->
+
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ojass_o"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/yearzero" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ojass_j"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/j_ojass" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ojass_a"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/a_ojass" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ojass_s_1"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/s_ojass" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ojass_s_2"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/s_ojass" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:weightSum="3"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/realm"
+                android:layout_width="0dp"
+                android:layout_weight=".9"
+                android:layout_height="match_parent"
+                android:src="@drawable/realm"/>
 
             <ImageView
                 android:layout_width="0dp"
+                android:layout_weight=".1"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/oimage" />
+                />
+
+            <ImageView
+                android:id="@+id/the"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:src="@drawable/thethe"/>
 
             <ImageView
                 android:layout_width="0dp"
+                android:layout_weight=".1"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/jimage" />
+                />
 
             <ImageView
+                android:id="@+id/reconvening"
                 android:layout_width="0dp"
+                android:layout_weight="1.6"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/aimage" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/simage" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/simage" />
+                android:src="@drawable/reconvening"/>
 
         </LinearLayout>
 
@@ -65,43 +127,47 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            android:weightSum="6"
+            android:weightSum="4"
             android:layout_weight="0.3" >
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.8"
                 />
 
          <ImageView
+             android:id="@+id/year_2_1"
              android:layout_width="0dp"
              android:layout_height="match_parent"
-             android:layout_weight="1"
-             android:src="@drawable/twoimage"/>
+             android:layout_weight="0.6"
+             android:src="@drawable/yeartwo"/>
+
+            <ImageView
+                android:id="@+id/year_0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:src="@drawable/yearzero"/>
+
+            <ImageView
+                android:id="@+id/year_2_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:src="@drawable/yeartwo"/>
+
+            <ImageView
+                android:id="@+id/year_2_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:src="@drawable/yeartwo"/>
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/zeroimage"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/twoimage"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/twoimage"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.8"
                />
 
         </LinearLayout>
