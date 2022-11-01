@@ -1,5 +1,6 @@
 package com.release.ojass2022.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(String.valueOf(R.string.web_client_id))
                 .requestEmail()
                 .build();
         getSupportFragmentManager()
@@ -72,6 +74,16 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 toolbar.setTitle("Developers");
             }
+            if( item.getItemId()==R.id.sign_in){
+                GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+                if (account == null) {
+                    Toast.makeText(this, "User not signed in", Toast.LENGTH_SHORT).show();
+                    this.startActivity(new Intent(this, LoginActivity.class));
+                } else {
+                    Toast.makeText(this, "User signed in", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "idToken: "+account.getIdToken(), Toast.LENGTH_SHORT).show();
+                }
+            }
             if (item.getItemId() == R.id.sign_out) {
                 signOut();
             }
@@ -85,12 +97,7 @@ public class MainActivity extends AppCompatActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account != null) {
             GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-            mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    Toast.makeText(MainActivity.this, "User signed out", Toast.LENGTH_SHORT).show();
-                }
-            });
+            mGoogleSignInClient.signOut().addOnCompleteListener(task -> Toast.makeText(MainActivity.this, "User signed out", Toast.LENGTH_SHORT).show());
         }
     }
 
