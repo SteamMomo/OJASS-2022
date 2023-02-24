@@ -72,26 +72,11 @@ public class PostItemAdapter extends RecyclerView.Adapter<PostItemAdapter.MyView
     }
 
     private void commentBtnControls() {
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(mContext);
-        if (account == null) {
-            Toast.makeText(mContext, "User not signed in", Toast.LENGTH_SHORT).show();
-            mContext.startActivity(new Intent(mContext, CommentActivity.class));
-        } else {
-            Toast.makeText(mContext, "User signed in", Toast.LENGTH_SHORT).show();
-            mContext.startActivity(new Intent(mContext, CommentActivity.class));
-            postRequest(account);
-        }
+
     }
 
     private void likeBtnControls() {
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(mContext);
-        if (account == null) {
-            Toast.makeText(mContext, "User not signed in", Toast.LENGTH_SHORT).show();
-            mContext.startActivity(new Intent(mContext, LoginActivity.class));
-        } else {
-            Toast.makeText(mContext, "User signed in", Toast.LENGTH_SHORT).show();
-            postRequest(account);
-        }
+
     }
 
     private void postRequest(GoogleSignInAccount acc) {

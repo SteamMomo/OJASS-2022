@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main_drawer_layout"
-    tools:openDrawer="start"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.MainActivity">
 
@@ -22,8 +21,9 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                app:titleTextColor="@color/light"
-                android:layout_height="50dp"
+                app:titleTextColor="@color/white"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                android:layout_height="45dp"
                 android:background="@color/medium" >
             </androidx.appcompat.widget.Toolbar>
             <!-- For fragments -->
@@ -31,18 +31,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/frame"/>
+
+
         </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            android:layout_gravity="bottom"
+            android:background="@color/mint_cream"
+            app:labelVisibilityMode="unlabeled"
+            app:itemActiveIndicatorStyle="@color/medium"
+            app:itemRippleColor="@color/medium"
+            app:menu="@menu/nav_menu">
+
+            <View
+                android:id="@+id/spacerView"
+                android:layout_width="match_parent"
+                android:layout_height="0.05dp"
+                android:alpha="0.1"
+                android:background="@color/black"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/main_header_layout"
-        app:itemRippleColor="@color/medium"
-        app:menu="@menu/nav_menu" />
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/navigation"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start"-->
+<!--        app:headerLayout="@layout/main_header_layout"-->
+<!--        app:itemRippleColor="@color/medium"-->
+<!--        app:menu="@menu/nav_menu" />-->
 
 </androidx.drawerlayout.widget.DrawerLayout>

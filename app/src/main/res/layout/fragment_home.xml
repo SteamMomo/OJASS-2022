@@ -2,17 +2,27 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/homeFragment"
+    android:background="@color/mint_cream"
     android:layout_height="match_parent"
-    android:background="@drawable/ojasslogo"
     tools:context=".sidemenuFragments.HomeFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_renderMode="automatic"
+        app:lottie_rawRes="@raw/globegrid" />
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:paddingBottom="7dp"
+        android:alpha="0.98"
+        android:paddingBottom="10dp"
         android:id="@+id/postRecyclerView"/>
 
 </FrameLayout>

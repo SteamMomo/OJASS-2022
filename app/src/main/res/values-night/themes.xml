@@ -12,4 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/medium</item>
     </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="fontFamily">@font/sandy</item>
+        <item name="android:textSize">30sp</item>
+    </style>
 </resources>

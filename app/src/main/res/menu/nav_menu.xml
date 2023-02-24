@@ -27,18 +27,18 @@
             android:icon="@drawable/description"
             android:title="About Us"
             app:showAsAction="ifRoom" />
-        <item
-            android:id="@+id/sign_in"
-            android:checkable="true"
-            android:icon="@drawable/logout"
-            android:title="Login"
-            app:showAsAction="ifRoom" />
-        <item
-            android:id="@+id/sign_out"
-            android:checkable="true"
-            android:icon="@drawable/logout"
-            android:title="Logout"
-            app:showAsAction="ifRoom" />
+<!--        <item-->
+<!--            android:id="@+id/sign_in"-->
+<!--            android:checkable="true"-->
+<!--            android:icon="@drawable/logout"-->
+<!--            android:title="Login"-->
+<!--            app:showAsAction="ifRoom" />-->
+<!--        <item-->
+<!--            android:id="@+id/sign_out"-->
+<!--            android:checkable="true"-->
+<!--            android:icon="@drawable/logout"-->
+<!--            android:title="Logout"-->
+<!--            app:showAsAction="ifRoom" />-->
 
     </group>
 </menu>
