@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 app:titleTextColor="@color/white"
                 app:titleTextAppearance="@style/Toolbar.TitleText"
-                android:layout_height="45dp"
+                android:layout_height="60dp"
                 android:background="@color/medium" >
             </androidx.appcompat.widget.Toolbar>
             <!-- For fragments -->

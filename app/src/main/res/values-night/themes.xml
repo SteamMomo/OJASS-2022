@@ -11,10 +11,17 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/medium</item>
+
+        <item name="fontFamily">@font/cuteoscars</item>
+
     </style>
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="fontFamily">@font/sandy</item>
+        <item name="fontFamily">@font/fredoka</item>
         <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="round_text">
+        <item name="fontFamily">@font/fredoka</item>
     </style>
 </resources>

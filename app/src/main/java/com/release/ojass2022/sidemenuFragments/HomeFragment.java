@@ -28,8 +28,7 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
     }
     public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment homeFragment = new HomeFragment();
-        return homeFragment;
+        return new HomeFragment();
     }
 
     @Override
@@ -48,11 +47,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void initializations() {
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("184104187931-mrqlem5e2fht9ds3r7jbtp41r8b3tcrf.apps.googleusercontent.com")
-                .requestEmail()
-                .build();
-        mGoogleSignInClient = GoogleSignIn.getClient(requireContext(), gso);
     }
 
     private void configureRecyclerView() {

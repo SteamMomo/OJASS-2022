@@ -10,4 +10,6 @@
     <string name="web_client_id">184104187931-05o01lnqu6qrk7l9neg1nvjns0duk98h.apps.googleusercontent.com</string>
 
     <string name="name">Guddu</string>
+    <string name="todo">TODO</string>
+    <string name="event_name">Event Name</string>
 </resources>
