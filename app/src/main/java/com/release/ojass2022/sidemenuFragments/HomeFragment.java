@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+//
+//import com.google.android.gms.auth.api.signin.GoogleSignIn;
+//import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.release.ojass2022.MainViewModel;
 import com.release.ojass2022.PostItemAdapter;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
     private GoogleSignInOptions gso;
-    private GoogleSignInClient mGoogleSignInClient;
+//    private GoogleSignInClient mGoogleSignInClient;
 
     public HomeFragment() {
     }
