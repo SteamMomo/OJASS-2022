@@ -3,6 +3,9 @@ package com.release.ojass2022;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.release.ojass2022.myTeams_Developers.MyTeamsModel;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,12 +13,38 @@ public class MainViewModel extends ViewModel {
     private ArrayList <PostItemModel> posts;
     private ArrayList <PostItemModel> events;
 
+    private ArrayList<MyTeamsModel> myteams;
+
     public ArrayList<PostItemModel> getPosts() {
         if (posts == null) {
             posts = new ArrayList<>();
             loadPosts();
         }
         return posts;
+    }
+
+    public ArrayList<MyTeamsModel> getTeams()
+    {
+        if(myteams == null)
+        {
+            myteams = new ArrayList<>();
+            loadTeams();
+
+        }
+        return myteams;
+    }
+
+    private void loadTeams()
+    {
+        ArrayList<MyTeamsModel> temp = new ArrayList<>();
+        temp.add(new MyTeamsModel("imageurl", "Guddu", "Android"));
+        temp.add(new MyTeamsModel("imageurl", "Guddu", "Android"));
+        temp.add(new MyTeamsModel("imageurl", "Guddu", "Android"));
+        temp.add(new MyTeamsModel("imageurl", "Guddu", "Android"));
+        temp.add(new MyTeamsModel("imageurl", "Guddu", "Android"));
+        temp.add(new MyTeamsModel("imageurl", "Guddu", "Android"));
+
+        myteams = temp;
     }
 
     private void loadPosts() {

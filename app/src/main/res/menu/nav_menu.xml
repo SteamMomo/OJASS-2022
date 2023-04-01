@@ -19,7 +19,7 @@
             android:id="@+id/developers"
             android:checkable="true"
             android:icon="@drawable/developers"
-            android:title="Developers"
+            android:title="My Teams"
             app:showAsAction="ifRoom" />
         <item
             android:id="@+id/about_us"
