@@ -7,25 +7,42 @@
     android:background="@color/black"
     tools:context=".activities.SplashScreen">
 
-    <LinearLayout
+
+    <VideoView
+        android:id="@+id/videoView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        />
+
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:weightSum="2">
+        android:weightSum="1.2">
 
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.9"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/globegrid" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.4"
+            android:layout_weight="0.3"/>
+
+<!--        <com.airbnb.lottie.LottieAnimationView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="0.5"-->
+<!--            app:lottie_autoPlay="true"-->
+<!--            app:lottie_loop="true"-->
+<!--            app:lottie_rawRes="@raw/globegrid" />-->
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
             android:weightSum="5">
@@ -37,45 +54,6 @@
                 android:layout_weight="5"
                 android:src="@drawable/ojass_three" />
 
-
-            <!-- due to size I used complete ojass in single pic
-            -->
-
-
-<!--            <ImageView-->
-<!--                android:id="@+id/ojass_o"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:src="@drawable/yearzero" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/ojass_j"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:src="@drawable/j_ojass" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/ojass_a"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:src="@drawable/a_ojass" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/ojass_s_1"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:src="@drawable/s_ojass" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/ojass_s_2"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:src="@drawable/s_ojass" />-->
 
         </LinearLayout>
 
@@ -89,23 +67,26 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/realm"
+                android:id="@+id/reconvening"
                 android:layout_width="0dp"
-                android:layout_weight=".9"
                 android:layout_height="match_parent"
-                android:src="@drawable/realm"/>
+                android:layout_weight="1.6"
+                android:scaleType="fitCenter"
+                android:src="@drawable/reconvening" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight=".1"
                 android:layout_height="match_parent"
+
                 />
 
             <ImageView
-                android:id="@+id/the"
+                android:id="@+id/thethe"
                 android:layout_width="0dp"
                 android:layout_weight="0.3"
                 android:layout_height="match_parent"
+
                 android:src="@drawable/thethe"/>
 
             <ImageView
@@ -115,11 +96,11 @@
                 />
 
             <ImageView
-                android:id="@+id/reconvening"
+                android:id="@+id/realm"
                 android:layout_width="0dp"
-                android:layout_weight="1.6"
+                android:layout_weight="0.9"
                 android:layout_height="match_parent"
-                android:src="@drawable/reconvening"/>
+                android:src="@drawable/realm"/>
 
         </LinearLayout>
 
@@ -128,7 +109,7 @@
             android:layout_height="0dp"
             android:orientation="horizontal"
             android:weightSum="4"
-            android:layout_weight="0.3" >
+            android:layout_weight="0.2" >
 
             <ImageView
                 android:layout_width="0dp"
@@ -155,7 +136,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:src="@drawable/yeartwo"/>
+                android:src="@drawable/yeartwo" />
 
             <ImageView
                 android:id="@+id/year_2_3"
@@ -176,17 +157,23 @@
 
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.3">
+            android:layout_weight="0.15">
 
             <ImageView
                 android:id="@+id/ojasslogo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ojassnit" />
 
 
 
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"/>
 
 
     </LinearLayout>
