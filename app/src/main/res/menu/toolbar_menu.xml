@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/location"
+        android:checkable="true"
+        android:icon="@drawable/baseline_location_on_24"
+        android:title="Map"
+        app:showAsAction="ifRoom" />
+
+</menu>

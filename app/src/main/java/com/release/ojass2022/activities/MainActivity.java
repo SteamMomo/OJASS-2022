@@ -1,6 +1,8 @@
 package com.release.ojass2022.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -14,6 +16,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 //import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.release.ojass2022.MapActivity;
 import com.release.ojass2022.R;
 import com.release.ojass2022.sidemenuFragments.DevelopersFragment;
 import com.release.ojass2022.sidemenuFragments.EventsFragment;
@@ -78,54 +81,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//        navigationView.setNavigationItemSelectedListener(item -> {
-//            if (item.getItemId() == R.id.home) {
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.frame, new HomeFragment())
-//                        .commit();
-//                toolbar.setTitle("Home");
-//            }
-//            if (item.getItemId() == R.id.events) {
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.frame, new EventsFragment())
-//                        .commit();
-//                toolbar.setTitle("Events");
-//            }
-//            if (item.getItemId() == R.id.developers) {
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.frame, new DevelopersFragment())
-//                        .commit();
-//                toolbar.setTitle("Developers");
-//            }
-//            if( item.getItemId()==R.id.sign_in){
-//                GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-//                if (account == null) {
-//                    Toast.makeText(this, "User not signed in", Toast.LENGTH_SHORT).show();
-//                    this.startActivity(new Intent(this, LoginActivity.class));
-//                } else {
-//                    Toast.makeText(this, "User signed in", Toast.LENGTH_SHORT).show();
-//                    Toast.makeText(this, "idToken: "+account.getIdToken(), Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//            if (item.getItemId() == R.id.sign_out) {
-//                signOut();
-//            }
-//            if (drawerLayout.isDrawerOpen(GravityCompat.START))
-//                drawerLayout.closeDrawer(GravityCompat.START);
-//            return false;
-//        });
     }
-
-//    private void signOut() {
-//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-//        if (account != null) {
-//            GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-//            mGoogleSignInClient.signOut().addOnCompleteListener(task -> Toast.makeText(MainActivity.this, "User signed out", Toast.LENGTH_SHORT).show());
-//        }
-//    }
 
     /**
      * handle the toolbar
@@ -133,8 +89,13 @@ public class MainActivity extends AppCompatActivity {
     private void configureToolbar() {
 
         toolbar.setTitle("Home");
-//        toolbar.setNavigationIcon(R.drawable.menu_light);
-//        toolbar.setNavigationOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
+        toolbar.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.location) {
+                Intent intent = new Intent(this, MapActivity.class);
+                startActivity(intent);
+            }
+            return false;
+        });
     }
 
     /**

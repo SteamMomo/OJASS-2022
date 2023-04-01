@@ -17,7 +17,7 @@
     </style>
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="fontFamily">@font/fredoka</item>
+        <item name="fontFamily">@font/cuteoscars</item>
         <item name="android:textSize">30sp</item>
     </style>
 
