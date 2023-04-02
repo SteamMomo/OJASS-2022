@@ -4,12 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 
 import com.mapbox.android.core.location.LocationEngine;
 import com.mapbox.android.core.location.LocationEngineListener;
 import com.mapbox.mapboxsdk.MapmyIndia;
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentOptions;
 import com.mapbox.mapboxsdk.location.modes.CameraMode;
@@ -18,9 +22,11 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mmi.services.account.MapmyIndiaAccountManager;
 
-public class MapActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity{
 
     MapView mapView;
+    MapboxMap mapmyIndiaMap;
+    LocationEngine locationEngine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +35,7 @@ public class MapActivity extends AppCompatActivity {
         addingApiKey();
         mapView = findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);
-        showUserLocation();
     }
-
-    private void showUserLocation() {
-
-    }
-
 
     @Override
     protected void onStart() {
