@@ -22,10 +22,10 @@
             android:title="My Teams"
             app:showAsAction="ifRoom" />
         <item
-            android:id="@+id/about_us"
+            android:id="@+id/gallery"
             android:checkable="true"
-            android:icon="@drawable/description"
-            android:title="About Us"
+            android:icon="@drawable/gallery"
+            android:title="Gallery"
             app:showAsAction="ifRoom" />
 <!--        <item-->
 <!--            android:id="@+id/sign_in"-->

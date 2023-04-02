@@ -12,6 +12,7 @@ import java.util.List;
 public class MainViewModel extends ViewModel {
     private ArrayList <PostItemModel> posts;
     private ArrayList <PostItemModel> events;
+    private ArrayList<GalleryItemModel> gallery;
 
     private ArrayList<MyTeamsModel> myteams;
 
@@ -75,6 +76,26 @@ public class MainViewModel extends ViewModel {
         temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
         temp.add(new PostItemModel("OJASS", "123456789", "qwerty", "This is a sample description.", 10, 20));
         events = temp;
+    }
+
+    public ArrayList<GalleryItemModel> getGallery(){
+        if(gallery == null){
+            gallery = new ArrayList<>();
+            loadGallery();
+        }
+        return gallery;
+    }
+
+    private void loadGallery(){
+        ArrayList<GalleryItemModel> temp = new ArrayList<>();
+        temp.add(new GalleryItemModel("ojasslogo"));
+        temp.add(new GalleryItemModel("ojasslogo"));
+        temp.add(new GalleryItemModel("ojasslogo"));
+        temp.add(new GalleryItemModel("ojasslogo"));
+        temp.add(new GalleryItemModel("ojasslogo"));
+        temp.add(new GalleryItemModel("ojasslogo"));
+        temp.add(new GalleryItemModel("ojasslogo"));
+        gallery = temp;
     }
 
 }

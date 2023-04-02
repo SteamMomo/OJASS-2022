@@ -24,6 +24,7 @@ import com.release.ojass2022.MapActivity;
 import com.release.ojass2022.R;
 import com.release.ojass2022.sidemenuFragments.DevelopersFragment;
 import com.release.ojass2022.sidemenuFragments.EventsFragment;
+import com.release.ojass2022.sidemenuFragments.GalleryFragment;
 import com.release.ojass2022.sidemenuFragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -88,6 +89,13 @@ public class MainActivity extends AppCompatActivity {
                         .replace(R.id.frame, new DevelopersFragment())
                         .commit();
                 toolbar.setTitle("Developers");
+            }
+            if (item.getItemId() == R.id.gallery) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame, new GalleryFragment())
+                        .commit();
+                toolbar.setTitle("Gallery");
             }
             if (drawerLayout.isDrawerOpen(GravityCompat.START))
                 drawerLayout.closeDrawer(GravityCompat.START);
