@@ -8,7 +8,7 @@
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/backgroundv3"
+        android:src="@color/white"
         android:scaleType="fitXY" />
 
     <LinearLayout
