@@ -10,7 +10,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
 
+import com.mmi.layers.BasicInfoWindow;
+import com.mmi.layers.Marker;
 import com.mmi.services.account.MapmyIndiaAccountManager;
+import com.mmi.util.GeoPoint;
 import com.release.ojass2022.R;
 
 import com.mmi.MapView;
@@ -18,6 +21,9 @@ import com.mmi.MapmyIndiaMapView;
 import com.mmi.layers.UserLocationOverlay;
 import com.mmi.layers.location.GpsLocationProvider;
 import com.mmi.util.constants.MapViewConstants;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class MapActivity extends AppCompatActivity implements MapViewConstants {
 
@@ -54,7 +60,34 @@ public class MapActivity extends AppCompatActivity implements MapViewConstants {
                 locationFoundHandler.sendEmptyMessage(1);
             }
         });
+
+        BasicInfoWindow infoWindow = new BasicInfoWindow(R.layout.tooltip, mMapView);
+
+        infoWindow.setTipColor(getResources().getColor(R.color.red));
+
+        ArrayList<GeoPoint> points = new ArrayList<>();
+        Marker marker = new Marker(mMapView);
+        marker.setTitle("TSG");
+//        marker.setDescription(markerModel.getDescription());
+//        marker.setSubDescription(markerModel.getSubDescription());
+
+        marker.setPosition(new GeoPoint(22.775120479981233, 86.14377897987133));
+        marker.showInfoWindow();
+        marker.setInfoWindow(infoWindow);
+//        marker.setRelatedObject(markerModel);
+        mMapView.getOverlays().add(marker);
+        points.add(new GeoPoint(22.775120479981233, 86.14377897987133));
+
         mMapView.invalidate();
+    }
+
+    void addMarker(GeoPoint point) {
+        Marker marker = new Marker(mMapView);
+        marker.setTitle("");
+        marker.setDescription("");
+        marker.setPosition(point);
+        marker.setInfoWindow(null);
+        mMapView.getOverlays().add(marker);
     }
 
     @Override
