@@ -5,12 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".sidemenuFragments.DevelopersFragment">
 
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@color/white"
-        android:scaleType="fitXY" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

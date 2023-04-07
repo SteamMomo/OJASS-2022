@@ -8,12 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".sidemenuFragments.HomeFragment">
 
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@color/white"
-        android:scaleType="fitXY" />
-
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

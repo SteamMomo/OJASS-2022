@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "475994330320",
+    "project_id": "ojass-23-e9f4d",
+    "storage_bucket": "ojass-23-e9f4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475994330320:android:8e8d7f6861136f67bc3ad5",
+        "android_client_info": {
+          "package_name": "com.release.ojass2022"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475994330320-dmkntm3t6ihul9htbitd8dfq9qtktsc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Sm8o188RsD8mls2BHE8xI2VFw-l2f70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475994330320-dmkntm3t6ihul9htbitd8dfq9qtktsc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

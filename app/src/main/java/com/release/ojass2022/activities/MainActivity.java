@@ -34,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(String.valueOf(R.string.web_client_id))
-                .requestEmail()
-                .build();
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.frame, new HomeFragment())
