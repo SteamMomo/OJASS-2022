@@ -19,8 +19,7 @@ public class SplashScreen extends AppCompatActivity {
 
     private int splashtimeout = 3500;
     private VideoView video;
-    private ImageView ojass_o, ojass_j, ojass_a, ojass_s_1, ojass_s_2, ojass_text, realm, the, reconvening, year_2_1,
-    year_0, year_2_2, year_2_3;
+    private ImageView  ojass_text, realm, the, reconvening, year_2_1, year_0, year_2_2, year_2_3;
 
 
     @Override

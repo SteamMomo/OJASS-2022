@@ -8,7 +8,17 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.mapbox.android.core.location.LocationEngine;
 import com.mapbox.android.core.location.LocationEngineListener;
 import com.mapbox.mapboxsdk.MapmyIndia;
@@ -22,7 +32,20 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mmi.services.account.MapmyIndiaAccountManager;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Map;
+
 public class MapActivity extends AppCompatActivity{
+
+
+
+
+
+
+
 
     MapView mapView;
     MapboxMap mapmyIndiaMap;
@@ -32,15 +55,18 @@ public class MapActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
         addingApiKey();
         mapView = findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         mapView.onStart();
+
     }
 
     @Override
@@ -65,6 +91,7 @@ public class MapActivity extends AppCompatActivity{
     protected void onResume() {
         super.onResume();
         mapView.onResume();
+
     }
 
     @Override
@@ -88,5 +115,8 @@ public class MapActivity extends AppCompatActivity{
         MapmyIndia.getInstance(getApplicationContext());
         mapView = findViewById(R.id.map_view);
     }
+
+
+
 
 }
