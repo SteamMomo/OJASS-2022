@@ -54,11 +54,13 @@ dependencies {
     // lottie animations support
     implementation 'com.airbnb.android:lottie:5.2.0'
 
-    // maps
-    implementation 'com.mapmyindia.sdk:mapmyindia-android-sdk:6.8.2'
-
     implementation 'androidx.work:work-runtime:2.8.1'
 
+
     // volley for api calling
-    implementation 'com.android.volley:volley:1.2.1'
+//    implementation 'com.android.volley:volley:1.2.1'
+
+    // maps
+    implementation 'com.mapmyindia.sdk:mapmyindia-android-raster-sdk:2.5.1'
+
 }

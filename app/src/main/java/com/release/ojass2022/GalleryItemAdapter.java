@@ -1,6 +1,7 @@
 package com.release.ojass2022;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,8 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.release.ojass2022.activities.ShowImageActivity;
 
 import java.util.ArrayList;
 
@@ -34,6 +37,11 @@ public class GalleryItemAdapter extends RecyclerView.Adapter<GalleryItemAdapter.
         GalleryItemModel model=gallery.get(position);
         holder.image.setImageResource(context.getResources().
                 getIdentifier(model.getImage(),"drawable",context.getPackageName()));
+        holder.image.setOnClickListener(view -> {
+            Intent intent = new Intent(context, ShowImageActivity.class);
+            intent.putExtra("imageName", gallery.get(position).getImage());
+            context.startActivity(intent);
+        });
     }
 
     @Override
